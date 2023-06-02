@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COntador de palabras</title>
+</head>
+<body>
+   
+    <form
+  action="https://formspree.io/f/xvonjgjr"
+  method="POST"
+ >
+
+    Your email:
+    <input type="email" name="email">
+  </label>
+  <br>
+  <br>
+  <label>
+    Your message:
+    
+    <textarea name="message" type="text" id="campoTexto" maxlength="100"></textarea>
+  </label>
+  <!-- your other form fields go here -->
+  <button type="submit">Send</button>
+</form>
+    <p id="contadorCaracteres">Caracteres restantes: 100</p>
+
+    <script>
+    
+    const campoTexto = document.getElementById('campoTexto');
+
+    campoTexto.addEventListener('input', function() {
+  const texto = campoTexto.value;
+  const caracteresRestantes = 100 - texto.length; // Aquí puedes ajustar el número máximo de caracteres permitidos
+
+  // Actualizar el elemento HTML para mostrar los caracteres restantes
+  const contadorCaracteres = document.getElementById('contadorCaracteres');
+  contadorCaracteres.textContent = `Caracteres restantes: ${caracteresRestantes}`;
+});
+
+
+</script>
+</body>
+</html>
